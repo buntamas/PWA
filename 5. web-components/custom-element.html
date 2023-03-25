@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <style>
+    body {
+      font-size: xx-large;
+    }
+  </style>
+  <head>
+    <title>Custom Element</title>
+  </head>
+  <body>
+    <my-product name="Phone"></my-product>
+
+    <script>
+      class MyProduct extends HTMLElement {
+        constructor() {
+          super();
+          this.innerHTML = "My custom product";
+          this.innerHTML = `<h2>${this.getAttribute('name')}</h2>`
+        }
+      }
+      window.customElements.define("my-product", MyProduct);
+    </script>
+  </body>
+</html>
