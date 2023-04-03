@@ -1,0 +1,13 @@
+:host {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid;
+    div {
+        display: flex;
+        justify-content: left;
+        mat-icon {
+            align-self: center;
+        }
+    }
+}

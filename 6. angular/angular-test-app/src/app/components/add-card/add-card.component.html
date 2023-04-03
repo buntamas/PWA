@@ -1,0 +1,10 @@
+<div class="wrapper">
+  <h3>Something will happen</h3>
+  <form [formGroup]="formGroup" class="app-form-group">
+    <mat-form-field>
+      <mat-label>Name</mat-label>
+      <input #name matInput formControlName="name" />
+    </mat-form-field>
+    <button (click)="onClick(name.value)">Go</button>
+  </form>
+</div>

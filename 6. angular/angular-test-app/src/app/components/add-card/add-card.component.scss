@@ -1,0 +1,16 @@
+:host {
+  .wrapper {
+    padding: 0 8px 0 8px;
+    border: 1px solid black;
+
+    h3 {
+      margin-top: 4px;
+    }
+
+    .app-form-group {
+      display: flex;
+      flex-direction: column;
+      flex-flow: column;
+    }
+  }
+}

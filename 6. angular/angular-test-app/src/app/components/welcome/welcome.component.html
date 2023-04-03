@@ -1,0 +1,23 @@
+<button #button mat-raised-button color="primary" (click)="onClick($event)">
+  Click me
+</button>
+<mat-form-field>
+  <mat-label>home</mat-label>
+  <input #input matInput [(ngModel)]="inputValue" placeholder="text" />
+</mat-form-field>
+<div>Value: {{ inputValue }}</div>
+<div>Value4: {{ input.value }}</div>
+<!-- //#Attribute directive -->
+<div [ngStyle]="{color: input.value ==='asd' ? 'green': 'red'}">Value2: {{ input.value }}</div>
+
+<!-- //#Structural directive -->
+<div *ngIf="input.value" >Value3: {{ input.value }}</div>
+<ng-template [ngIf]="input.value"> asdsa {{input.value}}</ng-template>
+
+<app-welcome-child
+  [stringWrapper]="valueWithCdCheck"
+></app-welcome-child>
+<img [src]="image" height="500px" width="500px">
+<!-- <div>{{ dateString | date: 'short' }}</div> -->
+<div>{{ 3 | double }}</div>
+

@@ -1,0 +1,12 @@
+<div>{{ iso | date }}</div>
+<!-- //#ng-container -->
+<ng-container *ngIf="cardEntites">
+  <app-card
+    myDirective
+    [defaultBackground]="'yellow'"
+    *ngFor="let card of cardEntites"
+    [card]="card"
+  ></app-card>
+</ng-container>
+
+<app-add-card (name)="getName($event)"></app-add-card>
