@@ -1,23 +1,44 @@
+<!-- //#Data binding - Event binding -->
 <button #button mat-raised-button color="primary" (click)="onClick($event)">
   Click me
 </button>
 <mat-form-field>
   <mat-label>home</mat-label>
-  <input #input matInput [(ngModel)]="inputValue" placeholder="text" />
-</mat-form-field>
-<div>Value: {{ inputValue }}</div>
-<div>Value4: {{ input.value }}</div>
-<!-- //#Attribute directive -->
-<div [ngStyle]="{color: input.value ==='asd' ? 'green': 'red'}">Value2: {{ input.value }}</div>
 
-<!-- //#Structural directive -->
-<div *ngIf="input.value" >Value3: {{ input.value }}</div>
-<ng-template [ngIf]="input.value"> asdsa {{input.value}}</ng-template>
+  <!-- //#ViewChild -->
+  <!-- //#Data binding - Two way data binding -->
+  <input #kid matInput [(ngModel)]="inputValue" placeholder="text" />
+</mat-form-field>
+
+<!--//#Data binding - Interpolation -->
+<div>Interpolation value: {{ inputValue }}</div>
+
+<div>ViewChild value2: {{ kid.value }}</div>
+
+<!-- //#Directive - Attribute directive -->
+<div [ngStyle]="{color: kid.value ==='asd' ? 'green': 'red'}">Attribute directive value3: {{ kid.value }}</div>
+
+<!-- //#Directive - Structural directive -->
+<div *ngIf="kid.value" >Value: {{ kid.value }}</div>
+<ng-template [ngIf]="kid.value"> Value template: {{kid.value}}</ng-template>
 
 <app-welcome-child
   [stringWrapper]="valueWithCdCheck"
 ></app-welcome-child>
+
+<!--//#Data binding - Property binding -->
 <img [src]="image" height="500px" width="500px">
-<!-- <div>{{ dateString | date: 'short' }}</div> -->
+
+<!-- //#Pipe -->
+<div>{{ dateString | date: 'short' }}</div>
 <div>{{ 3 | double }}</div>
+
+<ng-container *ngIf="isBlue; else green">
+  <div>Kék az ég</div>
+</ng-container>
+
+<!-- //#ng-template -->
+<ng-template #green>
+  <div>Zöld a fű</div>
+</ng-template>
 

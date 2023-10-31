@@ -22,7 +22,7 @@ export class CardListComponent implements OnInit {
   ];
 
   iso = new Date();
-date: string|number|Date;
+  date: string|number|Date;
 
   constructor() {}
 

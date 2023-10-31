@@ -1,16 +1,16 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 export interface StringWrapper {
   value: string;
 }
-//#Interpolation
+//#Data binding - Interpolation
 @Component({
   selector: 'app-welcome-child',
   template: '<div>Change detection demo: {{ stringWrapper.value }}</div>',
 })
 export class WelcomeChildComponent {
 
-  //#Property binding
+  //#Data binding - Property binding
   @Input() stringWrapper: StringWrapper;
 
   constructor() {}

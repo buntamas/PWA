@@ -1,5 +1,5 @@
 import { Component, Output, EventEmitter } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { CardEntity } from '../card/card.component';
 
 @Component({
@@ -8,11 +8,11 @@ import { CardEntity } from '../card/card.component';
   styleUrls: ['add-card.component.scss'],
 })
 export class AddCardComponent {
-  formGroup = new FormGroup({
-    name: new FormControl('', Validators.required),
+  formGroup = new UntypedFormGroup({
+    name: new UntypedFormControl('', Validators.required),
   });
 
-  //#Output event binding
+  //#Data binding - Output event binding
   @Output() name: EventEmitter<string> = new EventEmitter<string>()
 
   addCardEntity(card: CardEntity) {}

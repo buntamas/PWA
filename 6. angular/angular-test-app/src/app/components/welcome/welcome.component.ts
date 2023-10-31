@@ -9,7 +9,7 @@ import { CardService } from '../../card.service';
 export interface StringWrapper {
   value: string;
 }
-
+//#Directive - Component directive
 @Component({
   selector: 'app-welcome',
   templateUrl: './welcome.component.html',
@@ -17,14 +17,16 @@ export interface StringWrapper {
 })
 export class WelcomeComponent {
   //#ViewChild
-  @ViewChild('input') inputRef: ElementRef<MatInput>;
+  @ViewChild('kid') inputRef: ElementRef<MatInput>;
 
-  //#Two way data binding
+  //#Data binding - Two way data binding
   inputValue = '';
   valueWithCdCheck: StringWrapper = { value: 'initial' };
   dateString: string
 
-  //#Property binding
+  isBlue = true;
+
+  //#Data binding - Property binding
   image: string = 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/640px-Image_created_with_a_mobile_phone.png'
 
   constructor(cardService: CardService) {
@@ -33,7 +35,7 @@ export class WelcomeComponent {
   }
 
 
-  //#Event binding
+  //#Data binding - Event binding
   onClick(_event: any) {
     console.log(_event);
     this.inputRef.nativeElement.focus();

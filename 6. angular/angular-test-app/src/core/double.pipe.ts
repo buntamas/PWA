@@ -1,5 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
+//#Pipe - Own pipe
 @Pipe({
   name: 'double'
 })
